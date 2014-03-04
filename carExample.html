@@ -1,0 +1,71 @@
+<html>
+
+<head>
+<script type="text/javascript">
+<!--
+
+/*
+function car(tmake,tmodel,tyear)
+{this.make=tmake;
+this.model=tmodel;
+this.year=tyear;
+this.display=showcar;//adding a method, too, to the object
+}*/
+
+function car(args)
+{var tmake,tmod,tyr;
+tmake=tmod=tyr="not given";
+switch(arguments.length){
+case 3:tyr=arguments[2];
+case 2:tmod=arguments[1];
+case 1:tmake=arguments[0];
+case 0:
+}
+this.make=tmake;
+this.model=tmod;
+this.year=tyr;
+this.display=showcar;}
+
+
+function showcar(){
+document.write("car make=", this.make,"<br/>");
+document.write("car model=", this.model,"<br/>");
+document.write("car year=", this.year,"<br/>");
+}
+
+this.price=baseprice;//add to car constructor in //html head
+
+function baseprice(){//also in html head
+switch(this.make){
+ case"ford": return 10000;
+ case "toyota": return 20000;
+}//switch
+return 15000;
+}//fn
+
+
+// -->
+</script>
+</head>
+
+
+<body>
+<h1> all about cars </h1>
+<script type="text/javascript">
+<!--
+var a=new Array(3);
+a[0]=prompt("enter make");
+ a[1]=prompt("enter model");
+ a[2]=prompt("enter year");
+var mycar=new car(a[0],a[1],a[2]);
+
+mycar.display();
+var num=mycar.price();//output in body
+document.write("car cost=",num ,"<br/>");
+
+// -->
+</script>
+</body>
+
+
+</html>
